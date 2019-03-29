@@ -1,0 +1,116 @@
+{
+  "manifest_version": 2,
+  "name": "招聘系统-简历采集器",
+  "version": "1.0.0",
+  "description": "配合招聘系统一起使用的扩展程序。",
+  "icons": {
+    "16": "img/icon_16.png",
+    "24": "img/icon_24.png",
+    "32": "img/icon_32.png",
+    "48": "img/icon_48.png",
+    "64": "img/icon_48.png",
+    "128": "img/icon_128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/jquery/jquery-1.9.1.min.js",
+      "js/tools/common.js",
+      "js/background.js",
+      "js/config/index.js"
+    ],
+    "persistent": true
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "img/icon_16.png",
+      "19": "img/icon_19.png",
+      "24": "img/icon_24.png",
+      "32": "img/icon_32.png"
+    },
+    "default_title": "简历采集器",
+    "default_popup": "popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://rd5.zhaopin.com/*",
+        "https://ehire.51job.com/*",
+        "https://employer.58.com/*",
+        "https://lpt.liepin.com/*",
+        "https://www.zhipin.com/chat/*"
+      ],
+      "js": [
+        "js/jquery/jquery-1.9.1.min.js",
+        "js/content_cookie.js",
+        "js/tools/common.js",
+        "js/config/index.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://*.zhaopin.com/*resumeNo*",
+        "https://ehire.51job.com/Candidate/ResumeView*",
+        "https://jianli.58.com/resumedetail/*",
+        "https://lpt.liepin.com/cvview/showresumedetail?*",
+        "https://www.zhipin.com/chat/*"
+      ],
+      "css": [
+        "css/content_spider.css"
+      ],
+      "js": [
+        "js/jquery/jquery-1.9.1.min.js",
+        "js/jquery/opentype.min.js",
+        "js/config/index.js",
+        "js/spider/common.js",
+        "js/spider/zhilian.js",
+        "js/spider/job51.js",
+        "js/spider/p58.js",
+        "js/spider/liepin.js",
+        "js/spider/boss.js",
+        "js/tools/format.js",
+        "js/tools/common.js",
+        "js/content_spider.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    },
+    {
+      "matches": [
+        "https://ehire.51job.com/*",
+        "https://passport.zhaopin.com/org/login*",
+        "https://passport.58.com/login/?*",
+        "https://www.zhipin.com/chat/*"
+      ],
+      "js": [
+        "js/jquery/jquery-1.9.1.min.js",
+        "js/inject/login.js"
+      ],
+      "run_at": "document_end",
+      "all_frames": false
+    }
+  ],
+  "permissions": [
+    "contextMenus",
+    "tabs",
+    "storage",
+    "cookies",
+    "webRequest",
+    "webRequestBlocking",
+    "https://zhaopin.nb01.info/chrome_ext/v1/*",
+    "https://zhaopin.sunlands.site/spider/chrome_ext/v1/*",
+    "*://*.zhaopin.com/",
+    "*://*.51job.com/",
+    "*://*.58.com/",
+    "*://*.liepin.com/",
+    "*://*.zhipin.com/chat/"
+  ],
+  "homepage_url": "http://zhaopin.sunlands.site/#/login",
+  "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
+  "web_accessible_resources": [
+    "detail.html",
+    "js/inject/zhilian_detail.js",
+    "css/bootstrap.min.css"
+  ]
+}

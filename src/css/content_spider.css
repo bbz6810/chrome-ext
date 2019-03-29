@@ -1,0 +1,166 @@
+/*-------------------------------*/
+/*           Wrappers            */
+/*-------------------------------*/
+
+#sunlands-sidebar-container {
+    padding-left: 0;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+#sunlands-sidebar-container.toggled {
+    padding-left: 306px;
+}
+
+#sunlands-sidebar-wrapper {
+    z-index: 999999;
+    left: 306px;
+    width: 0;
+    /* height: 570px; */
+    margin-left: -306px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-transition: all 0.5s ease;
+    -moz-transition: all 0.5s ease;
+    -o-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+    box-shadow: rgb(204, 204, 204) 1px 1px 10px 1px;
+}
+
+#sunlands-sidebar-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+#sunlands-sidebar-container.toggled #sunlands-sidebar-wrapper {
+    width: 306px;
+}
+
+#page-content-wrapper {
+    width: 100%;
+    padding-top: 70px;
+}
+
+#sunlands-sidebar-container .navbar-fixed-top{
+    position: fixed;
+    top: 0px;
+}
+
+#sunlands-sidebar-container.toggled #page-content-wrapper {
+    position: absolute;
+    margin-right: -306px;
+}
+
+/*-------------------------------*/
+/*     Sidebar nav styles        */
+/*-------------------------------*/
+
+.sidebar-nav {
+    position: absolute;
+    top: 0;
+    width: 306px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    position: relative;
+    line-height: 20px;
+    display: inline-block;
+    width: 100%;
+}
+
+.sidebar-nav li:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* height: 100%; */
+    width: 3px;
+    -webkit-transition: width .2s ease-in;
+    -moz-transition: width .2s ease-in;
+    -ms-transition: width .2s ease-in;
+    transition: width .2s ease-in;
+
+}
+
+.sidebar-nav>.sidebar-brand {
+    height: 65px;
+    font-size: 20px;
+    line-height: 44px;
+}
+
+.sidebar-nav .dropdown-menu {
+    position: relative;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    border-radius: 0;
+    border: none;
+    box-shadow: none;
+}
+
+/*-------------------------------*/
+/*       Hamburger-Cross         */
+/*-------------------------------*/
+
+.hamburger {
+    position: fixed;
+    top: 20px;
+    z-index: 999;
+    display: block;
+    width: 32px;
+    height: 32px;
+    margin-left: 15px;
+    background: transparent;
+    border: none;
+    background-color: #eff3f6;
+    background-image: linear-gradient(-180deg, #fafbfc, #eff3f6 90%);
+    border: 1px solid rgba(27, 31, 35, .2);
+    border-radius: .25em;
+}
+
+.hamburger.is-closed .hamb-open {
+    display: inline-block;
+}
+
+.hamburger.is-closed .hamb-close {
+    display: none;
+}
+
+.hamburger.is-open .hamb-close {
+    display: inline-block;
+}
+
+.hamburger.is-open .hamb-open {
+    display: none;
+}
+
+.hamb-open:after {
+    content: " ";
+	height: 8px;
+	width: 8px;
+	border-width: 2px 2px 0 0;
+	border-color: #000000;
+	border-style: solid;
+	transform:rotate(45deg);
+	position: absolute;
+    top: 11px;
+    left:10px;
+}
+
+.hamb-close:after {
+    content: " ";
+	height: 8px;
+	width: 8px;
+	border-width: 0 0 2px 2px;
+	border-color: #000000;
+	border-style: solid;
+	transform:rotate(45deg);
+	position: absolute;
+    top: 11px;
+    left:12px;
+}

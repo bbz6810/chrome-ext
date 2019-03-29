@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>采集详情页</title>
+    <script src="js/jquery/jquery-1.9.1.min.js"></script>
+    <script src="js/config/index.js"></script>
+    <script src="js/detail.js"></script>
+    <script src="js/jquery/select2.min.js"></script>
+    <link rel="stylesheet" href="css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="css/select2.css"/>
+    <style>
+        body {
+            overflow-x: hidden;
+            padding-top: 18px;
+        }
+
+        .form-item-label {
+            font-size: 13px;
+            text-align: right;
+            width: 100px !important;
+            font-weight: 400;
+        }
+
+        .inputLength {
+            width: 180px;
+        }
+    </style>
+</head>
+
+<body>
+<div>
+
+    <label class="form-item-label" style="width: 60px;"><span style="color: #FFD700;">★</span>电话</label>
+    <input id="phone" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;"><span style="color: #FFD700;">★</span>应聘岗位</label>
+    <select id="ehrPostId" class="inputLength"></select>
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">姓名</label>
+    <input id="userName" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">性别</label>
+    <input id="sex" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">年龄</label>
+    <input id="age" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">学历</label>
+    <input id="degree" type="text" class="inputLength">
+</div>
+
+<div>
+    <label class="form-item-label" style="width: 60px;">邮箱</label>
+    <input id="email" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">工作经验</label>
+    <input id="workLength" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望地点</label>
+    <input id="expectAddress" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望工作</label>
+    <input id="expectJob" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">目前状况</label>
+    <input id="currentState" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望薪资</label>
+    <input id="expectSalary" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望工作性质</label>
+    <input id="expectJobProperty" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">应聘职位</label>
+    <input id="jobTitle" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望工作地</label>
+    <input id="workLocaltion" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">婚姻状况</label>
+    <input id="isMarry" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">期望行业</label>
+    <input id="expectIndustry" type="text" class="inputLength">
+</div>
+<div>
+    <label class="form-item-label" style="width: 60px;">自我评价</label>
+    <input id="selfEvaluation" type="text" class="inputLength">
+</div>
+<!--<div>-->
+<!--<label class="form-item-label" style="width: 60px;">语言能力</label>-->
+<!--<input id="languageList" type="text" placeholder maxlength="50">-->
+<!--</div>-->
+<!--<div>-->
+<!--<label class="form-item-label" style="width: 60px;">教育经历</label>-->
+<!--<input id="educationList" type="text" placeholder maxlength="50">-->
+<!--</div>-->
+<!--<div>-->
+<!--<label class="form-item-label" style="width: 60px;">所获证书</label>-->
+<!--<input id="certificateList" type="text" placeholder maxlength="50">-->
+<!--</div>-->
+<!--<div>-->
+<!--<label class="form-item-label" style="width: 60px;">项目经历</label>-->
+<!--<input id="projectList" type="text" placeholder maxlength="50">-->
+<!--</div>-->
+<!--<div>-->
+<!--<label class="form-item-label" style="width: 60px;">工作经历</label>-->
+<!--<input id="workExpList" type="text" placeholder maxlength="50">-->
+<!--</div>-->
+
+<div>
+    <label class="form-item-label" style="width: 60px;">&nbsp;</label>
+    <div style="width: 180px; display: inline-block; text-align: right;">
+        <button type="button" id="bnt_crawl" class="btn btn-primary btn-sm">采集</button>
+        <button type="button" id="bnt_in_database" class="btn btn-primary btn-sm">入库</button>
+    </div>
+</div>
+</body>
+
+</html>
